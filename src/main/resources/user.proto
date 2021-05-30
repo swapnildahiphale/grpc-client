@@ -1,0 +1,24 @@
+syntax= "proto3";
+
+option java_package= "com.pmm";
+
+service user{
+
+  rpc login(loginrequest) returns(Apiresponse);
+
+  rpc logout(Empty) returns(Apiresponse);
+
+}
+
+message loginrequest{
+
+string username= 1;
+string password= 2;
+}
+
+message Apiresponse{
+string resposecode=1;
+string resposebody=2;
+}
+
+message Empty{}
